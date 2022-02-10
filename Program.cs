@@ -11,26 +11,21 @@ namespace Cursor
         {
             // ███████████████████████████▒▒▒ 100,00%
             Loader loader = new Loader();
-
-            loader.LoopPrintPercent(new Range(0, 100), Calc);
-            Console.WriteLine();
+            loader.LoopPrintPercent(Calc);
 
             // ███████████████████████████▒▒▒ 100,00 number
             loader = new Loader(0, 100);
-            loader.LoopPrintNumber(new Range(0, 100), Calc);
-            Console.WriteLine();
+            loader.LoopPrintNumber(Calc);
 
             //****************************** 100,00%
             loader = new Loader(0, 40, '*', ' ');
-            loader.LoopPrintPercent(new Range(0, 100), Calc);
-            Console.WriteLine();
+            loader.LoopPrintNumber(Calc);
 
             //================================ 100,00%
             loader = new Loader(50, 100, '=', ' ');
             loader.LengthBar = 32;
-            loader.LoopPrintNumber(new Range(0, 100), Calc);
+            loader.LoopPrintNumber(Calc);
 
-            Console.WriteLine();
         }
     }
 }

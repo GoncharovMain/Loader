@@ -28,21 +28,23 @@
             _bar = bar;
             _emptyBar = emptyBar;
         }
-        public void LoopPrintPercent(Range range, Function function)
+        public void LoopPrintPercent(Function function)
         {
-            for (double percent = range.Start.Value; percent <= range.End.Value; percent++)
+            for (double percent = 0; percent <= 100; percent++)
             {
                 function();
                 PrintPercentAsync(percent / 100);
             }
+            Console.WriteLine();
         }
-        public void LoopPrintNumber(Range range, Function function)
+        public void LoopPrintNumber(Function function)
         {
-            for (int number = range.Start.Value; number <= range.End.Value; number++)
+            for (int number = _minBar; number <= _maxBar; number++)
             {
-                function();
                 PrintNumberAsync(number);
+                function();
             }
+            Console.WriteLine();
         }
         public async void PrintPercentAsync(double percent)
         {
@@ -77,9 +79,9 @@
         {
             ValidatePercentBar(percent);
 
-            int nowLengthBar = (int)(LengthBar * percent);
+            int currentLengthBar = (int)(LengthBar * percent);
 
-            string loadProc = new String(_bar, nowLengthBar);
+            string loadProc = new String(_bar, currentLengthBar);
 
             return loadProc.PadRight(LengthBar, _emptyBar);
         }

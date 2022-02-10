@@ -4,7 +4,7 @@ namespace Cursor
     {
         public static void Calc()
         {
-            int waitTime = 50;
+            int waitTime = 75;
             Thread.Sleep(waitTime);
         }
         public static void Main()
@@ -24,7 +24,7 @@ namespace Cursor
             //================================ 100,00%
             loader = new Loader(50, 100, '=', ' ');
             loader.LengthBar = 32;
-            loader.LoopPrintNumber(Calc);
+            loader.LoopPrintPercent(Calc);
 
         }
     }
